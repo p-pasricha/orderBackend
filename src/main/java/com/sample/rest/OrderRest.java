@@ -24,7 +24,7 @@ public class OrderRest {
 	public Order submitOrder(@QueryParam("idProduct") long idProduct, @QueryParam("amount") long amount) 
 	{
 		Order order = new Order();
-		
+		System.out.println("Inside submitOrder");
 		Product product = restTemplate.getForObject("http://localhost:8082/product1?id={id}", Product.class,	idProduct);
 		
 		order.setProduct(product);
